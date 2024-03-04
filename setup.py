@@ -115,17 +115,18 @@ class build_ext_subclass(build_ext):
             # directly for the compiler
             self.compiler.include_dirs.insert(0, self.cfitsio_build_dir)
 
-            CCold = self.compiler.compiler
-            if 'ccache' in CCold:
-                CC = []
-                for val in CCold:
-                    if val == 'ccache':
-                        print("removing ccache from the compiler options")
-                        continue
+            CC = None
+            # CCold = self.compiler.compiler
+            # if 'ccache' in CCold:
+            #     CC = []
+            #     for val in CCold:
+            #         if val == 'ccache':
+            #             print("removing ccache from the compiler options")
+            #             continue
 
-                    CC.append(val)
-            else:
-                CC = None
+            #         CC.append(val)
+            # else:
+            #     CC = None
 
             self.configure_cfitsio(
                 CC=CC,
