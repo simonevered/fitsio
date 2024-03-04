@@ -128,11 +128,11 @@ class build_ext_subclass(build_ext):
             # else:
             #     CC = None
 
-            self.configure_cfitsio(
-                CC=CC,
-                ARCHIVE=self.compiler.archiver,
-                RANLIB=self.compiler.ranlib,
-            )
+            # self.configure_cfitsio(
+            #     CC=CC,
+            #     ARCHIVE=self.compiler.archiver,
+            #     RANLIB=self.compiler.ranlib,
+            # )
 
             # If configure detected bzlib.h, we have to link to libbz2
             with open(os.path.join(self.cfitsio_build_dir, 'Makefile')) as fp:
