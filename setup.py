@@ -140,7 +140,7 @@ class build_ext_subclass(build_ext):
             #     if '-DHAVE_BZIP2=1' in _makefile:
             #         self.compiler.add_library('bz2')
             #     if '-DCFITSIO_HAVE_CURL=1' in _makefile:
-                    self.compiler.add_library('curl')
+                    # self.compiler.add_library('curl')
 
             self.compile_cfitsio()
 
