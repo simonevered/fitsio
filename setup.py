@@ -135,11 +135,11 @@ class build_ext_subclass(build_ext):
             # )
 
             # If configure detected bzlib.h, we have to link to libbz2
-            with open(os.path.join(self.cfitsio_build_dir, 'Makefile')) as fp:
-                _makefile = fp.read()
-                if '-DHAVE_BZIP2=1' in _makefile:
-                    self.compiler.add_library('bz2')
-                if '-DCFITSIO_HAVE_CURL=1' in _makefile:
+            # with open(os.path.join(self.cfitsio_build_dir, 'Makefile')) as fp:
+            #     _makefile = fp.read()
+            #     if '-DHAVE_BZIP2=1' in _makefile:
+            #         self.compiler.add_library('bz2')
+            #     if '-DCFITSIO_HAVE_CURL=1' in _makefile:
                     self.compiler.add_library('curl')
 
             self.compile_cfitsio()
