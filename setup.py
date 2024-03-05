@@ -106,7 +106,6 @@ class build_ext_subclass(build_ext):
         build_ext.run(self)
 
     def build_extensions(self):
-        USE_SYSTEM_FITSIO = True
         if not USE_SYSTEM_FITSIO:
 
             # Use the compiler for building python to build cfitsio
